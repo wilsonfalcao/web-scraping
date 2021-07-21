@@ -36,7 +36,7 @@ $SiteCrawler = new SitesCrawler($GoodReads);
 //Executando método get HTML
 $SiteCrawler->Execute();
 
-//primindo resultados obtivos através do objeto livro
+//imprimindo resultados obtidos através do objeto livro
 print_r($GoodReads->resumo);
 
 
