@@ -16,7 +16,7 @@ include __DIR__.("/Objetos/SitesCrawler.php");
 //Instanciando o Objeto GoodReads
 //Objeto de referência para extração de dados HTML
 $GoodReads = new GoodReads();
-//Passando valor para pesquisa
+//Passando ISBN do livro para pesquisa
 $GoodReads->search = "9788566636239";
 
 //Definindo regras para filtragem de dados e atributos classe livro
@@ -34,7 +34,7 @@ $GoodReads->SetRules('isbn13',"<span itemprop='isbn'>",'</span>');
 $SiteCrawler = new SitesCrawler($GoodReads);
 
 //Executando método get HTML
-$SiteCrawler->Execute();
+ $SiteCrawler->Execute();
 
 //imprimindo resultados obtidos através do objeto livro
 print_r($GoodReads->resumo);

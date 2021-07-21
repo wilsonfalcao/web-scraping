@@ -28,7 +28,7 @@ class GoodReads extends GetBookSites{
         $this->SetRules('linguagem',"itemprop='inLanguage'>",'</div>');
         $this->SetRules('isbn13',"<span itemprop='isbn'>",'</span>');
     }
-    protected function formateDatas(){
+    protected function dataFormat(){
 
         //Tratando resumo
         $this->resumo =str_replace("\n", "",$this->propirtiesClass["resumo"][0]);
@@ -76,7 +76,7 @@ class GoodReads extends GetBookSites{
 
         }
 
-        $this->formateDatas();
+        $this->dataFormat();
 
     }
 

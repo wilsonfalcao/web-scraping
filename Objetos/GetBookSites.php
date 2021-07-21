@@ -6,7 +6,7 @@ include $_SERVER['DOCUMENT_ROOT'].("/projetos/web-scraping/Objetos/Livro.php");
 abstract class GetBookSites extends LivroFull implements ISites{
 
     abstract protected function customBookRules();
-    abstract protected function formateDatas();
+    abstract protected function DataFormat();
     abstract public function Extract($HTML);
     protected $address;
     protected $propirtiesClass;
