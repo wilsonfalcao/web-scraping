@@ -1,22 +1,27 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].("/projetos/SOLID/Objetos/GetBookSites.php");
+include $_SERVER['DOCUMENT_ROOT'].("/projetos/web-scraping/Objetos/GetBookSites.php");
 
 
 class GoodReads extends GetBookSites{
 
     public $search;
 
-    public function __construct($searchtype = null,$urlcustom = null){
+    public function __construct(){
         
+        //Atribuindo URL para o atributo
         $this->address = "https://www.goodreads.com/book/isbn/";
+
+        //Iniciando regras padrões do objeto.
         $this->customBookRules();
     }
 
     protected function customBookRules(){
 
+        //Serializando atributos do GetBookSites
         $this->propirtiesClass= (array)$this;
 
+        //Definindo regras.
         $this->SetRules('title','<h1 id="bookTitle" class="gr-h1 gr-h1--serif" itemprop="name">','</h1>');
         $this->SetRules('resumo','<div id="descriptionContainer">','<a data-text-id=');
         $this->SetRules('autor','"><span itemprop="name">','</span></a>');

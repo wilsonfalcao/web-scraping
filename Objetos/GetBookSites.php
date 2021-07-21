@@ -1,12 +1,13 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].("/projetos/SOLID/Interfaces/ISites.php");
-include $_SERVER['DOCUMENT_ROOT'].("/projetos/SOLID/Objetos/Livro.php");
+include $_SERVER['DOCUMENT_ROOT'].("/projetos/web-scraping/Interfaces/ISites.php");
+include $_SERVER['DOCUMENT_ROOT'].("/projetos/web-scraping/Objetos/Livro.php");
 
 abstract class GetBookSites extends LivroFull implements ISites{
 
     abstract protected function customBookRules();
     abstract protected function formateDatas();
+    abstract public function Extract($HTML);
     protected $address;
     protected $propirtiesClass;
 
@@ -26,7 +27,5 @@ abstract class GetBookSites extends LivroFull implements ISites{
         else
             return false;
     }
-
-    abstract public function Extract($HTML);
 
 }

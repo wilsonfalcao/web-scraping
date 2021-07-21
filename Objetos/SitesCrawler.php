@@ -1,10 +1,10 @@
 <?php
 
 //Models
-include $_SERVER['DOCUMENT_ROOT'].("/projetos/SOLID/Objetos/Curl.php");
+include $_SERVER['DOCUMENT_ROOT'].("/projetos/web-scraping/Objetos/Curl.php");
 
 //Interfaces
-include $_SERVER['DOCUMENT_ROOT'].("/projetos/SOLID/Interfaces/IReadsMethods.php");
+include $_SERVER['DOCUMENT_ROOT'].("/projetos/web-scraping/Interfaces/IReadsMethods.php");
 
 class SitesCrawler implements ReadsMethods{
 
@@ -31,7 +31,7 @@ class SitesCrawler implements ReadsMethods{
           return $this->HTML;
         }
         else{
-            echo "This site class wasnt's validate";
+            echo "Object class wasnt's validate";
         }
     }
 

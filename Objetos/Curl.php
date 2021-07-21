@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].("/projetos/SOLID/Interfaces/ICrawler.php");
+include $_SERVER['DOCUMENT_ROOT'].("/projetos/web-scraping/Interfaces/ICrawler.php");
 
 class Curl implements ICrawler {
 
