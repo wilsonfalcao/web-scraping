@@ -1,12 +1,25 @@
 <?php
 
-//Models
-include $_SERVER['DOCUMENT_ROOT'].("/projetos/web-scraping/Objetos/Curl.php");
+/*
+CLASSE ESTRUTURA SITE
 
-//Interfaces
-include $_SERVER['DOCUMENT_ROOT'].("/projetos/web-scraping/Interfaces/IReadsMethods.php");
+-- Recebe a interface ISites (contrato da classe objeto sites) por inverção de dependência e IReadsMethods por implementação 
+-- 
+*/
 
-class SitesCrawler implements ReadsMethods{
+namespace bin;
+
+//Inclusão do Objeto CURL (função para obter HTML do site)
+include __DIR__.("/scraping/abstractions/Curl.php");
+//Inclusão de contrato de métodos
+include __DIR__.("/scraping/abstractions/IReadsMethods.php");
+
+use IReadsMethods;
+use ISites;
+use abstractions\Curl;
+
+
+class SitesCrawler implements IReadsMethods{
 
     protected $SiteStruct;
     protected $HTML;
@@ -24,7 +37,7 @@ class SitesCrawler implements ReadsMethods{
 
     public function Execute(){
 
-        if($this->SiteStruct->Authorization()){
+        if($this->SiteStruct->CheckAddress()){
 
           $this->ExtractHTML($this->SiteStruct->URLAddress());
           $this->SiteStruct->Extract($this->HTML);
@@ -36,3 +49,4 @@ class SitesCrawler implements ReadsMethods{
     }
 
 }
+

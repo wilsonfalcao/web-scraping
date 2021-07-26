@@ -1,6 +1,6 @@
 <?php
 
-interface ReadsMethods{
+interface IReadsMethods{
 
     public function Execute();
 }

@@ -1,0 +1,15 @@
+{
+    "name": "wilsonfalcao/web-scraping2",
+    "description": "Desenvolvimento de projeto web scraping sem uso de libs é com princípios SOLID",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {"classmap": ["src/bin/"]},
+    "authors": [
+        {
+            "name": "wilsonf",
+            "email": "wilson.falcao1@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

@@ -1,6 +1,10 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].("/projetos/web-scraping/Interfaces/ICrawler.php");
+namespace abstractions;
+
+include __DIR__.("/ICrawler.php");
+
+use ICrawler;
 
 class Curl implements ICrawler {
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace abstractions;
+
 class Livro {
 
     public $title;
@@ -7,17 +9,17 @@ class Livro {
     public $isbn10;
     public $isbn13;
     public $anopublish;
+    public $imagem;
+    public $resumo;
 
 }
 
 class LivroFull extends Livro {
 
     public $link;
-    public $resumo;
     public $autorlink;
     public $paginas;
     public $imagem_autor;
-    public $imagem_livro;
     public $rating;
     public $qyavaliantion;
     public $genero;
@@ -38,6 +40,7 @@ class LivroPrice extends Livro{
     
     public $price;
     public $price_capaDura;
+    public $price_capaComun;
     public $price_capaFlex;
     public $price_Kindle;
     public $desconto;
